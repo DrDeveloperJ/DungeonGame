@@ -1,0 +1,40 @@
+#include "UpgradeAttackButton.h"
+#include "../../GameMediator.h"
+
+UpgradeAttackButton::UpgradeAttackButton(std::shared_ptr<GameMediator> gameMediatorPtr, std::string newName, std::string buttonAssetDirectory, std::string hoverAssetDirectory, float posX, float posY, float scaleX, float scaleY) : Button(newName, buttonAssetDirectory, hoverAssetDirectory, posX, posY, scaleX, scaleY)
+{
+	gameMediator = gameMediatorPtr;
+}
+
+Response UpgradeAttackButton::requestData(const std::string& request)
+{
+	Response hi = "hello";
+	return hi;
+}
+
+void UpgradeAttackButton::notify(const std::string& message)
+{
+	ButtonState = 0;
+	if (message == "setVisible")
+	{
+		visible = true;
+	}
+	else if (message == "setInvisible")
+	{
+		visible = false;
+	}
+	else if (message == "Clicked")
+	{
+		gameMediator->notifyComponent("Player", "attackPointsUpgrade");
+		visible = false;
+		gameMediator->notifyComponent("UpgradeMaxHealthButton", "setInvisible");
+	}
+}
+
+void UpgradeAttackButton::Draw(sf::RenderWindow& window)
+{
+	if (visible)
+	{
+		window.draw(*Sprite);
+	}
+}

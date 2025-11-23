@@ -1,0 +1,258 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{58b2d3f3-2a64-40d7-8292-e8e6b825d36f}</ProjectGuid>
+    <RootNamespace>OOPModuleProject</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>$(SolutionDir)\dependencies\SFML\include;$(IncludePath);$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)\dependencies\SFML\lib;$(LibraryPath);$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <IncludePath>$(SolutionDir)\dependencies\SFML\include;$(VC_IncludePath);$(WindowsSDK_IncludePath);;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)\dependencies\SFML\lib;$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>$(SolutionDir)\dependencies\SFML\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)\dependencies\SFML\lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <IncludePath>$(SolutionDir)\dependencies\SFML\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)\dependencies\SFML\lib;$(SolutionDir)\dependencies\SFML\include;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>SFML_STATIC;WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions);SFML_STATIC</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <AdditionalIncludeDirectories>$(SolutionDir)\dependencies\SFML\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>sfml-window-s-d.lib;sfml-graphics-s-d.lib;sfml-system-s-d.lib;sfml-audio-s-d.lib;sfml-network-s-d.lib;opengl32.lib;freetype.lib;winmm.lib;gdi32.lib;flac.lib;vorbisenc.lib;vorbisfile.lib;vorbis.lib;ogg.lib;ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)\dependencies\SFML\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>SFML_STATIC;WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions);SFML_STATIC</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <AdditionalIncludeDirectories>$(SolutionDir)\dependencies\SFML\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>sfml-window-s.lib;sfml-graphics-s.lib;sfml-system-s.lib;sfml-audio-s.lib;sfml-network-s.lib;opengl32.lib;freetype.lib;winmm.lib;gdi32.lib;flac.lib;vorbisenc.lib;vorbisfile.lib;vorbis.lib;ogg.lib;ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)\dependencies\SFML\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>SFML_STATIC;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard_C>Default</LanguageStandard_C>
+      <AdditionalIncludeDirectories>$(SolutionDir)\dependencies\SFML\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>sfml-window-s-d.lib;sfml-graphics-s-d.lib;sfml-system-s-d.lib;sfml-audio-s-d.lib;sfml-network-s-d.lib;opengl32.lib;freetype.lib;winmm.lib;gdi32.lib;flac.lib;vorbisenc.lib;vorbisfile.lib;vorbis.lib;ogg.lib;ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)\dependencies\SFML\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>SFML_STATIC;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard_C>Default</LanguageStandard_C>
+      <AdditionalIncludeDirectories>$(SolutionDir)\dependencies\SFML\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <CompileAs>Default</CompileAs>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>sfml-window-s.lib;sfml-graphics-s.lib;sfml-system-s.lib;sfml-audio-s.lib;sfml-network-s.lib;opengl32.lib;freetype.lib;winmm.lib;gdi32.lib;flac.lib;vorbisenc.lib;vorbisfile.lib;vorbis.lib;ogg.lib;ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)\dependencies\SFML\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Reuseables\EnemyHealthBar.cpp" />
+    <ClCompile Include="Reuseables\Buttons\GuardButton.cpp" />
+    <ClCompile Include="Reuseables\Buttons\AttackButton.cpp" />
+    <ClCompile Include="Reuseables\Buttons\MeditateButton.cpp" />
+    <ClCompile Include="Reuseables\Buttons\ForwardButton.cpp" />
+    <ClCompile Include="Reuseables\Buttons\BackButton.cpp" />
+    <ClCompile Include="Reuseables\Buttons\ChangeDescriptionButton.cpp" />
+    <ClCompile Include="Reuseables\Buttons\ChangeNameButton.cpp" />
+    <ClCompile Include="Reuseables\Buttons\CustomizeDescriptionButton.cpp" />
+    <ClCompile Include="Reuseables\Buttons\CustomizeNameButton.cpp" />
+    <ClCompile Include="Reuseables\Buttons\HomePageButton.cpp" />
+    <ClCompile Include="Reuseables\Buttons\HardDiffButton.cpp" />
+    <ClCompile Include="Reuseables\Buttons\EasyDiffButton.cpp" />
+    <ClCompile Include="Reuseables\Buttons\ExploreButton.cpp" />
+    <ClCompile Include="Reuseables\Buttons\CustomizeButton.cpp" />
+    <ClCompile Include="Reuseables\AttackPointsBar.cpp" />
+    <ClCompile Include="Component.cpp" />
+    <ClCompile Include="DungeonBackground\DungeonBackgroundCache.cpp" />
+    <ClCompile Include="EnemyLogic\MovesDisplay.cpp" />
+    <ClCompile Include="Reuseables\PlayerHealthBar.cpp" />
+    <ClCompile Include="RoomLogic\DungeonExploredDisplay.cpp" />
+    <ClCompile Include="EnemyLogic\Enemy.cpp" />
+    <ClCompile Include="EnemyLogic\CombatMediator.cpp" />
+    <ClCompile Include="EnemyLogic\Goblin.cpp" />
+    <ClCompile Include="Reuseables\PreLoadedElement.cpp" />
+    <ClCompile Include="RoomLogic\DungeonRoom.cpp" />
+    <ClCompile Include="RoomLogic\EmptyRoom.cpp" />
+    <ClCompile Include="GameMediator.cpp" />
+    <ClCompile Include="RoomLogic\MonsterRoom.cpp" />
+    <ClCompile Include="Player.cpp" />
+    <ClCompile Include="Reuseables\Button.cpp" />
+    <ClCompile Include="Game.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="RoomLogic\RoomSelector.cpp" />
+    <ClCompile Include="RoomLogic\TreasureRoom.cpp" />
+    <ClCompile Include="RoomLogic\UpgradeRoom.cpp" />
+    <ClCompile Include="Reuseables\UiElement.cpp" />
+    <ClCompile Include="Reuseables\TextInput.cpp" />
+    <ClCompile Include="Reuseables\Text.cpp" />
+    <ClCompile Include="Reuseables\Buttons\TreasureButton.cpp" />
+    <ClCompile Include="Reuseables\Buttons\UpgradeAttackButton.cpp" />
+    <ClCompile Include="Reuseables\Buttons\UpgradeMaxHealthButton.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Reuseables\EnemyHealthBar.h" />
+    <ClInclude Include="Reuseables\Buttons\GuardButton.h" />
+    <ClInclude Include="Reuseables\Buttons\AttackButton.h" />
+    <ClInclude Include="Reuseables\Buttons\MeditateButton.h" />
+    <ClInclude Include="Reuseables\Buttons\ForwardButton.h" />
+    <ClInclude Include="Reuseables\Buttons\BackButton.h" />
+    <ClInclude Include="Reuseables\Buttons\ChangeDescriptionButton.h" />
+    <ClInclude Include="Reuseables\Buttons\ChangeNameButton.h" />
+    <ClInclude Include="Reuseables\Buttons\CustomizeDescriptionButton.h" />
+    <ClInclude Include="Reuseables\Buttons\CustomizeNameButton.h" />
+    <ClInclude Include="Reuseables\Buttons\HomePageButton.h" />
+    <ClInclude Include="Reuseables\Buttons\HardDiffButton.h" />
+    <ClInclude Include="Reuseables\Buttons\EasyDiffButton.h" />
+    <ClInclude Include="Reuseables\Buttons\ExploreButton.h" />
+    <ClInclude Include="Reuseables\Buttons\CustomizeButton.h" />
+    <ClInclude Include="Reuseables\AttackPointsBar.h" />
+    <ClInclude Include="Component.h" />
+    <ClInclude Include="DungeonBackground\DungeonBackgroundCache.h" />
+    <ClInclude Include="EnemyLogic\MovesDisplay.h" />
+    <ClInclude Include="Reuseables\PlayerHealthBar.h" />
+    <ClInclude Include="Response.h" />
+    <ClInclude Include="RoomLogic\DungeonExploredDisplay.h" />
+    <ClInclude Include="EnemyLogic\Enemy.h" />
+    <ClInclude Include="EnemyLogic\CombatMediator.h" />
+    <ClInclude Include="EnemyLogic\EnemyTypes.h" />
+    <ClInclude Include="EnemyLogic\Goblin.h" />
+    <ClInclude Include="Reuseables\PreLoadedElement.h" />
+    <ClInclude Include="RoomLogic\DungeonRoom.h" />
+    <ClInclude Include="RoomLogic\EmptyRoom.h" />
+    <ClInclude Include="GameMediator.h" />
+    <ClInclude Include="RoomLogic\RoomTypes.h" />
+    <ClInclude Include="RoomLogic\MonsterRoom.h" />
+    <ClInclude Include="Player.h" />
+    <ClInclude Include="Reuseables\Button.h" />
+    <ClInclude Include="Game.h" />
+    <ClInclude Include="RoomLogic\RoomSelector.h" />
+    <ClInclude Include="RoomLogic\TreasureRoom.h" />
+    <ClInclude Include="RoomLogic\UpgradeRoom.h" />
+    <ClInclude Include="Reuseables\UiElement.h" />
+    <ClInclude Include="Reuseables\TextInput.h" />
+    <ClInclude Include="Reuseables\Text.h" />
+    <ClInclude Include="Reuseables\Buttons\TreasureButton.h" />
+    <ClInclude Include="Reuseables\Buttons\UpgradeAttackButton.h" />
+    <ClInclude Include="Reuseables\Buttons\UpgradeMaxHealthButton.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
