@@ -1,7 +1,10 @@
 # DungeonGame
 My University Project for a quick dungeon crawler game to be made.
 
-Overview
+### :video_camera: Video Demo (Click the Photo)
+[![Youtube Project Demo](VideoThumbnail.png)](https://youtu.be/bpa4bH_8zmY)
+
+## Overview
 This project is a dungeon game where a monk character explores randomly generating
 dungeons. (With Random rooms) The player is able to customize their name and
 description, and they are to fight enemies in the dungeon to progress. They are also to be
@@ -10,8 +13,7 @@ and are allowed to heal by meditating in the “Empty Room”. They complete eac
 run by opening the treasure at the end of each dungeon in the “Treasure Room”. They are
 allowed to go back and forth between rooms as they wish.
 
-Design Patterns Below :
-
+## Design Patterns
 Mediator Pattern
 The system utilizes a GameMediator class as a central communication hub to decouple game systems. All components hold a std::shared_ptr to the mediator that has a HashMap of active entities so you can dynamically add entities such as rooms or enemies etc... Communication is routed via string identifiers which supports both one-way event notifications and synchronous data requests between components without establishing direct dependencies.
 
@@ -21,7 +23,7 @@ A Component base class serves as the structural template for all game entities, 
 State Design Pattern
 To manage the application's lifecycle, the Game class acts as a context that delegates updates to distinct state objects such as HomePage or GeneratingDungeonRoom. Each state encapsulates its own specific UI layout and input handling logic seperately.
 
-Description of Main Requirements
+## Description of Main Requirements
 Dungeon Generation :
 - Will be treated on a room creation basis, i.e when new non-visited room is created
 that is the point where its type is determined by the system choosing a random
@@ -67,6 +69,9 @@ Treasure :
 - Sets state back to HomePage so that player can go through the loop again of
 creating a new dungeon or customize
 
+## Class Diagram
+![Class Diagram Showing Some of the Architecture](ClassDiagram.png)
+
 The diagram does not include the following Components (They would all inherit from the component class)
  	- DungeonBackgroundCache
  	- DungeonExploredDisplay
@@ -80,7 +85,7 @@ The diagram does not include the following Components (They would all inherit fr
  	- RoomSelector
  	- Text
 
-To Run
+## To Run
 A Release Folder is provided with a .exe file simply run this file. ENSURE The Assets Folder
 is included in the release folder as well as the JdmgtR34raz9.ttf font.
 
