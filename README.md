@@ -91,6 +91,8 @@ is included in the release folder as well as the JdmgtR34raz9.ttf font.
 
 Built and Tested On Windows
 
+This only works in x86 Win32 in Configuration Manager.
+
 SFML Dependencies are included in dependencies folder
 
 Visual Studio Version Used : 2022
